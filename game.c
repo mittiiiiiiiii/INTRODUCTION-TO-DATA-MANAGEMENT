@@ -11,19 +11,27 @@ int coin_toss(){
     }
 }
 
-void game_result(int heads_count,int tails_count){
+void print_name(char name[]){
+    scanf("%s",name);
+    printf("Hello %s!\n",name);
+}
+
+void game_result(char name[],int heads_count,int tails_count){
     if(heads_count>tails_count){
-        printf("you won!\n");
+        printf("%s won!\n",name);
     }else{
-        printf("you lost!\n");
+        printf("%s lost!\n",name);
     }
 }
 
 int main(){
     int i,count=0,heads_count=0,tails_count=0;
-    char coin[6];
-
+    char coin[6],name[20];
     srand(time(NULL));
+
+    printf("Who are you?\n> ");
+
+    print_name(name);
 
     printf("Tossing a coin...\n");
 
@@ -40,7 +48,7 @@ int main(){
     }
 
     printf("Heads: %d, Tails: %d\n",heads_count,tails_count);
-    game_result(heads_count,tails_count);
+    game_result(name,heads_count,tails_count);
 
     return 0;
 }
