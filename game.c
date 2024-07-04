@@ -11,6 +11,14 @@ int coin_toss(){
     }
 }
 
+void game_result(int heads_count,int tails_count){
+    if(heads_count>tails_count){
+        printf("you won!\n");
+    }else{
+        printf("you lost!\n");
+    }
+}
+
 int main(){
     int i,count=0,heads_count=0,tails_count=0;
     char coin[6];
@@ -32,6 +40,7 @@ int main(){
     }
 
     printf("Heads: %d, Tails: %d\n",heads_count,tails_count);
+    game_result(heads_count,tails_count);
 
     return 0;
 }
